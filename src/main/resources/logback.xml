@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="10 seconds">
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %-30(%date{HH:mm:ss.SSS} [%thread]) %-50(%highlight(%-5level) %msg) %replace(%caller{1}){'^Caller.*?\w',''}
+                <!--        %-30(%date{HH:mm:ss.SSS} [%thread]) %highlight(%-5level) %msg%n-->
+            </pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.demo" level="DEBUG" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+    <root level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
